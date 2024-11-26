@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: mrt_delivery_status
+    description: "This model contains information about delivery status for each order."
+    columns:
+      - name: order_id
+        description: "Unique identifier for each order"
+      - name: order_status
+        description: "Status of order"
+      - name: order_date
+        description: "Date when order was placed" 
+      - name: required_date
+        description: "Date when order should be shipped" 
+      - name: shipped_date
+        description: "Actual date when order was shipped"
+      - name: store_name
+        description: "The name of the store where order was placed" 
+      - name: staff_full_name
+        description: "The name of the person responsible for the order shippment"         
+
+  - name: mrt_order_daily_report
+    description: "This model contains information about orders grouped by day, shop and staff person."
+    columns:
+      - name: order_date
+        description: "Date when order was placed"
+      - name: store_name
+        description: "The store where the order was packed"
+      - name: staff_full_name
+        description: "Person responsible for order shippment" 
+      - name: num_orders
+        description: "Total number of orders"
+      - name: num_products_sold
+        description: "Number of products sold" 
+      - name: total_price
+        description: "Total amount of money gained"  
+
+  - name: mrt_stocks_report
+    description: "This model contains information about how many products left in each shop together with information about total solds of this product current and previous month."
+    columns:
+      - name: order_month
+        description: "Month of order"
+      - name: product_name
+        description: "Name of the product"
+      - name: store_name
+        description: "Name of the store" 
+      - name: num_sold_last_month
+        description: "Total amount of sold product last month"
+      - name: num_sold_this_month
+        description: "Total amount of sold product this month" 
+      - name: stock_left
+        description: "How many products left on the shop stock"  
